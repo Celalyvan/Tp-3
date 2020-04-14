@@ -49,6 +49,7 @@ Ejercicio 2
 #include "pila.h"
 
 void cargarPila(Pila * punteroPila);
+
 void pasarPila(Pila *pOrigen, Pila *pDestino);
 
 int main()
