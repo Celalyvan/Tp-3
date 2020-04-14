@@ -7,24 +7,36 @@ Ejercicio 1
 #include "pila.h"
 
 ///ejercicio 1
+
 void cargarPila(Pila * punteroPila);
 
 
 int main()
 {
+
     Pila pilita;
+    
+    
     inicpila(&pilita);
+    
+    
 
     cargarPila(&pilita);
+    
+    
 
     printf("Pila pilita cargada:\n");
+    
+    
     mostrar(&pilita);
+    
 
     return 0;
 }
 
 void cargarPila(Pila * punteroPila)
 {
+
     char control;
 
     do
@@ -54,6 +66,7 @@ void pasarPila(Pila *pOrigen, Pila *pDestino);
 
 int main()
 {
+
     Pila pilita,pilota;
     inicpila(&pilita);
     inicpila(&pilota);
@@ -73,6 +86,7 @@ int main()
 
 void cargarPila(Pila * punteroPila)
 {
+
     char control='s';
 
     do
@@ -87,8 +101,10 @@ void cargarPila(Pila * punteroPila)
     while(control=='s');
 
 }
+
 void pasarPila(Pila *pOrigen, Pila *pDestino)
 {
+
     while(!pilavacia(pOrigen))
     {
         apilar(pDestino,desapilar(pOrigen));
@@ -109,6 +125,7 @@ void intercalar (Pila *pOrigen, Pila *pOrigen2, Pila *pDestino);
 
 int main()
 {
+
     Pila pila1, pila2, aux, pilaFinal;
     inicpila(&pila1);
     inicpila(&pila2);
@@ -141,6 +158,7 @@ int main()
 
 void cargarPila(Pila * pPila)
 {
+
     char control='s';
 
     do
@@ -158,6 +176,7 @@ void cargarPila(Pila * pPila)
 
 void intercalar (Pila *pOrigen, Pila *pOrigen2, Pila *pDestino)
 {
+
     while(!pilavacia(pOrigen))
     {
         apilar(pDestino, desapilar(pOrigen));
@@ -190,6 +209,7 @@ void intercalar (Pila *pOrigen, Pila *pOrigen2, Pila *pDestino)
 
 void acomodar(Pila *pOrigen, Pila *pDestino)
 {
+
     while(!pilavacia(pOrigen))
     {
         apilar(pDestino, desapilar(pOrigen));
@@ -209,6 +229,7 @@ void buscaMenor(Pila *origen, Pila *menor, Pila *aux);
 
 int main()
 {
+
     Pila dada, menor, aux;
 
     inicpila(&dada);
@@ -233,6 +254,7 @@ int main()
 
 void cargarPila(Pila *cargar)
 {
+
     char control;
 
     do
@@ -248,10 +270,13 @@ void cargarPila(Pila *cargar)
 
 void buscaMenor(Pila *origen, Pila *menor, Pila *aux)
 {
+
   apilar(menor, desapilar(origen));
+  
 
   while(!pilavacia(origen))
   {
+  
       if(tope(origen)>tope(menor)){
         apilar(aux, desapilar(origen));
       } else{
@@ -260,10 +285,13 @@ void buscaMenor(Pila *origen, Pila *menor, Pila *aux)
       }
 
   }
+  
 
   while(!pilavacia(aux)){
+  
       apilar(origen, desapilar(aux));
   }
+  
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -281,6 +309,7 @@ void ordenamiento(Pila *pila, Pila *pFinal);
 
 int main()
 {
+
     Pila pila1, pila2, pilaFinal;
 
     inicpila(&pila1);
@@ -308,6 +337,7 @@ int main()
 
 void cargarPila(Pila * pPila)
 {
+
     char control;
 
     do
@@ -376,6 +406,7 @@ void mover(Pila *original, Pila *destino);
 
 int main()
 {
+
     Pila pila1;
     inicpila(&pila1);
 
@@ -398,6 +429,7 @@ int main()
 
 void cargarPila(Pila * pPila)
 {
+
     char control;
 
     do
@@ -440,6 +472,7 @@ void ordenarPila(Pila *original)
 
 void insertarEnPila(Pila *original)
 {
+
     Pila aux, valorInsertar;
 
     inicpila(&aux);
@@ -459,6 +492,7 @@ void insertarEnPila(Pila *original)
 }
 
 void mover(Pila *salida, Pila *llegada){
+
     while(!pilavacia(salida)){
         apilar(llegada, desapilar(salida));
     }
@@ -480,6 +514,7 @@ void mover(Pila *original, Pila *destino);
 
 int main()
 {
+
     Pila pila1, pila2;
 
     inicpila(&pila1);
@@ -517,6 +552,7 @@ int main()
 
 void cargarPila(Pila * pPila)
 {
+
     char control;
 
     do
@@ -567,6 +603,7 @@ void ordenarPila(Pila *original)
 
 void insertarPilaEnPila(Pila *original, Pila *pFinal)
 {
+
     Pila aux;
 
     inicpila(&aux);
@@ -603,6 +640,7 @@ void mover(Pila *original, Pila *destino);
 
 int main()
 {
+
     Pila pila1;
 
     inicpila(&pila1);
@@ -620,6 +658,7 @@ int main()
 
 void cargarPila(Pila * pPila)
 {
+
     char control;
 
     do
@@ -636,12 +675,14 @@ void cargarPila(Pila * pPila)
 }
 
 void mover(Pila *salida, Pila *llegada){
+
     while(!pilavacia(salida)){
         apilar(llegada, desapilar(salida));
     }
 }
 
 int suma (Pila *pilita){
+
 
 Pila aux;
 
@@ -656,6 +697,7 @@ b=tope(pilita);
 c= a+b;
 
 return c;
+
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -678,6 +720,7 @@ float promedioPila (int cont, int acu);
 
 int main()
 {
+
     ///inicializar
     Pila pilita;
 
@@ -709,6 +752,7 @@ int main()
 
 void cargarPila(Pila * pPila)
 {
+
     char control;
 
     do
@@ -726,6 +770,7 @@ void cargarPila(Pila * pPila)
 
 int contarPila(Pila *pila)
 {
+
     Pila aux;
 
     inicpila(&aux);
@@ -759,6 +804,7 @@ int pila_a_decimal (Pila *pilota, int decimal);
 
 int main()
 {
+
     ///inicializo
     Pila pilita;
 
@@ -781,6 +827,7 @@ int main()
 
 void cargarPila(Pila * pPila)
 {
+
     char control;
 
     do
@@ -798,6 +845,7 @@ void cargarPila(Pila * pPila)
 
 int contarPila(Pila *pila)
 {
+
     Pila aux;
 
     inicpila(&aux);
@@ -817,6 +865,7 @@ int contarPila(Pila *pila)
 
 void mover(Pila *salida, Pila *llegada)
 {
+
     while(!pilavacia(salida))
     {
         apilar(llegada, desapilar(salida));
@@ -825,6 +874,7 @@ void mover(Pila *salida, Pila *llegada)
 
 int pila_a_decimal (Pila *pilota, int decimal)
 {
+
     Pila aux;
 
     inicpila(&aux);
